@@ -9,35 +9,42 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            
+            Spacer()
             // じゃんけんの数字が0だったら
             if answerNumber == 0 {
                 // 初期画面のテキストを表示
                 Text("これからじゃんけんをします！")
+                    .padding(.bottom)
             } else if answerNumber == 1 {
                 // じゃんけんの数字が1だったら、グー画像を指定
                 // グー画像を指定
                 Image("gu")
                     .resizable()
                     .scaledToFit()
+                Spacer()
                 // じゃんけんの種類を指定
                 Text("グー")
+                    .padding(.bottom)
             } else if answerNumber == 2 {
                 // じゃんけんの数字が2だったら、チョキ画像を指定
                 // チョキ画像を指定
                 Image("choki")
                     .resizable()
                     .scaledToFit()
+                Spacer()
                 // じゃんけんの種類を指定
                 Text("チョキ")
+                    .padding(.bottom)
             } else {
                 // じゃんけんの数字が「1」、「2」以外だったら、パー画像を指定
                 // パー画像を指定
                 Image("pa")
                     .resizable()
                     .scaledToFit()
+                Spacer()
                 // じゃんけんの種類を指定
                 Text("パー")
+                    .padding(.bottom)
             }
 
             
@@ -59,6 +66,11 @@ struct ContentView: View {
                 answerNumber = newAnswerNumber
             } label: {
                 Text("じゃんけんをする")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 100)
+                    .font(.title)
+                    .background(Color.pink)
+                    .foregroundColor(Color.white)
             }
 
         }
